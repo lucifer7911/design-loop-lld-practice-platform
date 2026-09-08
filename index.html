@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Loop — LLD practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">⌁</span> design loop</a>
+        <nav>
+          <a class="nav-item active" href="#practice"><span>⌘</span> Practice</a>
+          <a class="nav-item" href="#history"><span>◴</span> My attempts <b id="attempt-count">0</b></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="tiny-label">YOUR STREAK</div>
+          <div class="streak"><span>✦</span> 3 days</div>
+          <div class="profile"><div class="avatar">K</div><div><strong>Kaustubh</strong><small>Design learner</small></div><span>⌄</span></div>
+        </div>
+      </aside>
+
+      <main>
+        <header><div><div class="eyebrow">PRACTICE STUDIO <span class="welcome-dot">&bull;</span> WELCOME BACK, KAUSTUBH</div><h1>Let’s make your next design <em>clearer.</em></h1><p class="header-note">You do not need the perfect answer. Put your thinking somewhere we can work with it.</p></div><button class="ghost" id="reset-demo">Start fresh</button></header>
+
+        <section class="progress-row"><div class="progress-step done"><i>✓</i><span>Pick a prompt</span></div><div class="line filled"></div><div class="progress-step current"><i>2</i><span>Sketch your thinking</span></div><div class="line"></div><div class="progress-step"><i>3</i><span>Get a review</span></div><div class="line"></div><div class="progress-step"><i>4</i><span>Try again</span></div></section>
+
+        <section id="practice" class="workspace">
+          <div class="problem-pane">
+            <div class="problem-head"><div><span class="tag">INTERMEDIATE</span><span class="time">~ 35 min</span></div><button class="icon-button" aria-label="More options">•••</button></div>
+            <h2 id="problem-title">Design a parking lot</h2>
+            <p id="problem-summary">Model a multi-floor parking lot that assigns vehicles to suitable spots and calculates fees.</p><p class="human-prompt"><span>Take a breath.</span> Start with the objects you can see, then explain who makes each decision.</p>
+            <div class="problem-tabs"><button class="tab active" data-tab="brief">Brief</button><button class="tab" data-tab="constraints">Constraints</button><button class="tab" data-tab="hints">Hints</button></div>
+            <div class="brief-content" id="brief-content"></div>
+            <div class="problem-footer"><span>Focus areas</span><div id="focus-tags"></div></div>
+          </div>
+
+          <div class="editor-pane">
+            <div class="editor-toolbar"><div><span class="tiny-label">YOUR SOLUTION</span><span id="save-state" class="saved">● Saved locally</span></div><div class="format-actions"><button title="Bold">B</button><button title="Code">&lt;/&gt;</button><button title="List">☷</button></div></div>
+            <textarea id="solution" aria-label="Your design solution" placeholder="It is okay to start rough. Try: “The main objects are…”"></textarea>
+            <div class="editor-footer"><span><kbd>⌘</kbd> <kbd>↵</kbd> to submit</span><button id="submit-button" class="primary">Submit for feedback <span>→</span></button></div>
+          </div>
+        </section>
+
+        <section id="feedback-section" class="feedback hidden" aria-live="polite"></section>
+        <section id="history" class="history"><div class="section-title"><div><div class="eyebrow">YOUR PROGRESS</div><h2>Recent attempts</h2></div><button class="text-button" id="clear-history">Clear history</button></div><div id="history-list" class="history-list"><div class="empty-history">Your submitted designs will show up here — feedback becomes more useful over time.</div></div></section>
+      </main>
+    </div>
+    <template id="feedback-template"><div class="feedback-top"><div><div class="eyebrow">DESIGN REVIEW</div><h2>Feedback with a path forward</h2><p>We separate checks from judgement so you can see what changed the result.</p></div><div class="score-ring"><strong id="score">—</strong><span>/ 100</span></div></div><div class="feedback-grid"><div class="feedback-card checks"><div class="card-kicker">DETERMINISTIC CHECKS</div><div id="checks"></div></div><div class="feedback-card"><div class="card-kicker">DESIGN COACH</div><div id="coach-feedback"></div></div></div><div class="next-step"><span>↗</span><div><strong id="next-title">One focused revision</strong><p id="next-copy"></p></div><button id="try-again" class="secondary">Revise this design</button></div></template>
+    <script src="app.js"></script>
+  </body>
+</html>

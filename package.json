@@ -1,0 +1,9 @@
+{
+  "name": "design-loop",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "npx serve . -l 3000"
+  }
+}
